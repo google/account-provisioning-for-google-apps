@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style type="text/css">
+        body {
+          font: 14px/20px "Lucida Grande", "Lucida Sans Unicode", Helvetica, Arial, Verdana, sans-serif;
+          color: #333;
+          -webkit-font-smoothing: antialiased;
+        }
+        h1 {
+          margin-bottom: 0;
+          margin-top: 18px;
+          font-size: 28px;
+          line-height: 46px;
+          font-family: 'Lucida Grande', 'Lucida Sans Unicode', Helvetica, Arial, Verdana, sans-serif;
+          font-weight: normal;
+        }
+        .loadSpinner {
+            position: relative;
+            left: 30px;
+            top: 10px;
+            background: url("http://www.ajaxload.info/images/exemples/30.gif") no-repeat;
+            height: 30px;
+            width: 300px;
+        }
+        #accountPlaceholder {
+            color: #222;
+            font-weight: bold;
+        }
+        #loadingDiv {
+            position: relative;
+            z-index: 10;
+            display: block;
+            position: absolute;
+            height: 100%;
+            top: 0;
+            left: 0;
+            right: 0;
+            color: white;
+            text-align: center;
+            background: rgba(0, 0, 0, 0.8);
+        }
+        #loadingMessage {
+            padding-top: 100px;
+            display: none;
+        }
+    </style>
+    <script src="self-provisioning-demo.js"></script>
+</head>
+<body onload="initApp()">
+    <div id="accountCreationPanel">
+    <h1>Create your Google Apps account</h1>
+    <p>Your Google Apps account will give you access to all <a href="https://www.google.com/edu/products/productivity-tools/"  target="_blank">Google for Education resources</a>.</p>
+    <div id="mainForm">
+        <strong>Name</strong><br>
+        <input id="firstname" type="text" name="firstname" maxlength="60" placeholder="First name">
+        <input id="lastname" type="text" name="lastname" maxlength="60" placeholder="Last name">
+        <br/>
+        <br/>
+        <strong>Custom field</strong><br><span style="color: #777">Optional. e.g. second last name</span><br>
+        <input id="custom1" type="text" name="custom1" maxlength="60">
+        <br/>
+        <br/>
+        <div id="suggestionsPanel">
+            <strong>Choose your Google Apps account</strong>
+            <br/>
+            <div id="usernameMessage">
+                <span style="color: #777" style="display: none;">Enter your name to get available accounts</span>
+                <br/>
+                <br/>
+            </div>
+            <div id="suggestionsContainer" style="display: none;">
+                <div id="countdownContainer" style="display: none;">
+                    <span style="color: #777">These accounts expire in</span><span id="countdown" style="color: #888"></span>
+                </div>
+                <br/>
+            </div>
+            <div id="moreSuggestions" style="display: none;">
+                <input type="submit" value="Get available accounts" onclick="getSuggestions()">
+                <br/>
+                <br/>
+            </div>
+            </div>
+        <strong>Create a password</strong><br>
+        <input id="password" type="password" name="password">
+        <br/>
+        <br/>
+        <input id="createButton" type="submit" value="Create account" onclick="createAccount()">
+    </div>
+        </div>
+    <div class="loadSpinner" id="loadingAccount" style="display: none;">
+        <br/>
+        <br/>
+        <span>Creating account...</span>
+    </div>
+    <div id="accountCreatedPanel"  style="display: none;">
+        <h1>Google Apps account created!</h1>
+        <br/>
+        <span>Your Google Apps account </span><span id="accountPlaceholder"></span><span> was successfully created. You can start using it </span><a href="https://accounts.google.com/ServiceLogin">here</a>.
+        <br/>
+    </div>
+  <div id="loadingDiv">
+    <div id="loadingMessage">Connecting to RESTful API server at
+      <a id="hostUrl" style="color: white;" target="_blank"></a>...
+    </div>
+  </div>
+</body>
+</html>

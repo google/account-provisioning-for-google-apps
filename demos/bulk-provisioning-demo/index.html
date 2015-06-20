@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style type="text/css">
+        body {
+          font: 14px/20px "Lucida Grande", "Lucida Sans Unicode", Helvetica, Arial, Verdana, sans-serif;
+          color: #333;
+          -webkit-font-smoothing: antialiased;
+        }
+        h1 {
+          margin-bottom: 0;
+          margin-top: 18px;
+          font-size: 28px;
+          line-height: 46px;
+          font-family: 'Lucida Grande', 'Lucida Sans Unicode', Helvetica, Arial, Verdana, sans-serif;
+          font-weight: normal;
+        }
+        .userDiv {
+            border-bottom-color: #ddd;
+            border-bottom-width: 1px;
+            border-bottom-style: solid;
+            margin-top: 10px;
+            padding-bottom: 10px;
+        }
+        .firstUserDiv {
+            border-top-color: #ddd;
+            border-top-width: 1px;
+            border-top-style: solid;
+            padding-top: 10px;
+        }
+        .checkMark {
+            background: url("https://raw.githubusercontent.com/google/material-design-icons/master/action/1x_web/ic_check_circle_black_18dp.png") no-repeat;
+            height: 18px;
+            width: 18px;
+            display: inline-block;
+            margin-right: 8px;
+            margin-left: 8px;
+            vertical-align: middle;
+        }
+        .username {
+            color: rgba(113,188,120,1);
+        }
+        .usernameDiv {
+            display: none;
+        }
+        #loadingDiv {
+            position: relative;
+            z-index: 10;
+            display: block;
+            position: absolute;
+            height: 100%;
+            top: 0;
+            left: 0;
+            right: 0;
+            color: white;
+            text-align: center;
+            background: rgba(0, 0, 0, 0.8);
+        }
+        #loadingMessage {
+            padding-top: 100px;
+            display: none;
+        }
+    </style>
+    <script src="bluk-provisioning-demo.js"></script>
+</head>
+<body onload="initApp()">
+    <div id="accountCreationPanel">
+    <h1>Create Google Apps account in bulk</h1>
+    <p>You can use this API to create multiple Google Apps accounts in bulk. Usernames will be auto-generated.</p>
+    <p style="color:#888;">Default password: <span id="passwordSpan"></span></p>
+    <div id="mainForm">
+        <div class="userDiv firstUserDiv">
+            <input id="firstname1" type="text" maxlength="60" placeholder="First name" autocomplete="off">
+            <input id="lastname1" type="text" maxlength="60" placeholder="Last name" autocomplete="off">
+            <div id="usernameDiv1" class="usernameDiv">
+                <div class="checkMark"></div><span id="username1" class="username"></span>
+            </div>
+        </div>
+        <div class="userDiv">
+            <input id="firstname2" type="text" maxlength="60" placeholder="First name" autocomplete="off">
+            <input id="lastname2" type="text" maxlength="60" placeholder="Last name" autocomplete="off">
+            <div id="usernameDiv2" class="usernameDiv">
+                <div class="checkMark"></div><span id="username2" class="username"></span>
+            </div>
+        </div>
+        <div class="userDiv">
+            <input id="firstname3" type="text" maxlength="60" placeholder="First name" autocomplete="off">
+            <input id="lastname3" type="text" maxlength="60" placeholder="Last name" autocomplete="off">
+            <div id="usernameDiv3" class="usernameDiv">
+                <div class="checkMark"></div><span id="username3" class="username"></span>
+            </div>
+        </div>
+        <div class="userDiv">
+            <input id="firstname4" type="text" maxlength="60" placeholder="First name" autocomplete="off">
+            <input id="lastname4" type="text" maxlength="60" placeholder="Last name" autocomplete="off">
+            <div id="usernameDiv4" class="usernameDiv">
+                <div class="checkMark"></div><span id="username4" class="username"></span>
+            </div>
+        </div>
+        <div class="userDiv">
+            <input id="firstname5" type="text" maxlength="60" placeholder="First name" autocomplete="off">
+            <input id="lastname5" type="text" maxlength="60" placeholder="Last name" autocomplete="off">
+            <div id="usernameDiv5" class="usernameDiv">
+                <div class="checkMark"></div><span id="username5" class="username"></span>
+            </div>
+        </div>
+        <br/>
+        <input id="createButton" type="submit" value="Create accounts" onclick="createAccounts()">
+    </div>
+    </div>
+  <div id="loadingDiv">
+    <div id="loadingMessage">Connecting to RESTful API server at
+      <a id="hostUrl" style="color: white;" target="_blank"></a>...
+    </div>
+  </div>
+</body>
+</html>

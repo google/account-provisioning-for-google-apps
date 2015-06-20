@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style type="text/css">
+        body {
+          font: 14px/20px "Lucida Grande", "Lucida Sans Unicode", Helvetica, Arial, Verdana, sans-serif;
+          color: #333;
+          -webkit-font-smoothing: antialiased;
+        }
+        h1 {
+          margin-bottom: 0;
+          margin-top: 18px;
+          font-size: 28px;
+          line-height: 46px;
+          font-family: 'Lucida Grande', 'Lucida Sans Unicode', Helvetica, Arial, Verdana, sans-serif;
+          font-weight: normal;
+        }
+        #loadingDiv {
+            position: relative;
+            z-index: 10;
+            display: block;
+            position: absolute;
+            height: 100%;
+            top: 0;
+            left: 0;
+            right: 0;
+            color: white;
+            text-align: center;
+            background: rgba(0, 0, 0, 0.8);
+        }
+        #loadingMessage {
+            padding-top: 100px;
+            display: none;
+        }
+        #csvInput {
+          width: 300px;
+          height: 300px;
+          box-sizing: border-box;
+          padding: 10px;
+        }
+        #csvOutput {
+          width: 600px;
+          height: 300px;
+          box-sizing: border-box;
+          padding: 10px;
+        }
+        #fileDiv {
+          display: none;
+        }
+        .code {
+          font: 12px Consolas, "Liberation Mono", Menlo, Courier, monospace;
+        }
+        .property {
+          color: #a71d5d;
+        }
+        .box {
+          background-color: #f7f7f7;
+          padding: 8px;
+          width: 800px;
+        }
+    </style>
+    <script src="lib/PapaParse-4.1.0/papaparse.min.js"></script>
+    <script src="csv-provisioning-demo.js"></script>
+</head>
+<body onload="initApp()">
+    <div id="accountCreationPanel">
+    <h1>Create Google Apps account in bulk with a CSV input</h1>
+    <p>You can use this API to create multiple Google Apps accounts in bulk from a CSV input.<br/>Usernames will be auto-generated.</p>
+    <div class="box">
+    <strong>Notes:</strong>
+      <ul>
+        <li>First row should contain firstname, lastname followed by any custom fields.</li>
+        <li>Custom fields should be added to the <span class="code property">patterns</span> configuration property. They will otherwise be ignored.</li>
+        Example: <span class="code">[nickname][firstname],[firstname].[middlename]</span></li> See the <a href="TODO">README</a> to learn more about patterns.
+      </ul>
+    </div>
+    <p style="color:#888;">Default password: <span id="passwordSpan"></span></p>
+    <div id="mainForm">
+        <div id="fileDiv">
+          <strong>Choose a CSV file...</strong><br/>
+          <input type="file" id="fileLoader">
+          <p id="orP"><strong>or...</strong></p>
+        </div>
+        <div id="copyPasteDiv">
+          <strong>Copy paste a CSV input</strong><br/>
+          <textarea id="csvInput" placeholder="String input">
+firstname,lastname,middlename,nickname
+john,bravo,william,jonny
+brian,lewis,michael,moonlooker
+thalia,infante,alejandra,thalis
+marco,alvarez,antonio,march
+          </textarea>
+        </div>
+        <br/>
+        <input id="createButton" type="submit" value="Create accounts" onclick="createAccounts()">
+    </div>
+      <br/>
+      <h3>Account creation log</h3>
+      <textarea disabled id="csvOutput" placeholder="Account creation log"></textarea>
+    </div>
+  <div id="loadingDiv">
+    <div id="loadingMessage">Connecting to RESTful API server at
+      <a id="hostUrl" style="color: white;" target="_blank"></a>...
+    </div>
+  </div>
+</body>
+</html>

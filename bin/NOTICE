@@ -1,0 +1,50 @@
+==============================================================
+ Account provisioning for Google Apps
+ Copyright (C) 2015 Google Inc. All Rights Reserved.
+==============================================================
+
+appsProvisioning-0.0.1.jar contains the following UNMODIFIED dependencies:
+
+
+org.easymock
+Version: 3.3.1
+License: Apache License, Version 2.0, January 2004
+http://easymock.org/License.html
+
+
+com.h2database
+Version: 1.4.186
+License: Dual licensed and available under the MPL 2.0 (Mozilla Public License Version 2.0) or under the EPL 1.0 (Eclipse Public License)
+http://www.h2database.com/html/license.html
+
+
+org.eclipse.jetty
+Version: 9.2.3.v20140905
+License: Dual licensed under the Apache License 2.0 and Eclipse Public License 1.0
+http://www.eclipse.org/jetty/licenses.php
+
+
+org.glassfish.jersey
+Version: 2.7
+License: Dual licensed under 2 OSI approved licenses:
+COMMON DEVELOPMENT AND DISTRIBUTION LICENSE (CDDL - Version 1.1)
+GNU General Public License (GPL - Version 2, June 1991) with the [“Classpath Exception”
+https://jersey.java.net/license.html
+
+
+junit
+Version: 3.8.1
+License: Eclipse Public License 1.0
+http://junit.org/license.html
+
+
+org.apache.commons
+Version: 3.3.2
+License: APACHE LICENSE, VERSION 2.0
+http://www.apache.org/licenses/
+
+
+org.json
+Version: 20140107
+License: The JSON License
+http://www.json.org/license.html

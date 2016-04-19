@@ -16,31 +16,33 @@ The project dashboard will automatically open once the project is created.
 
 ![dashboard][dashNew]
 
-### 2. Create a Service Account
+### 2. Create an OAuth client ID
 
-On the left side panel go to `APIs & auth > Credentials` and click on the button *Create new Client ID*
+On the left side panel go to `Credentials > Create credentials` and click on the option *OAuth client ID*.
 
 ![new client ID][credNew]
 
-Under *Application type* select **Service account**, then click on *Create Client ID*
+Under *Application type* select **Other**, then type a name and click on *Create*.
 
 ![clientID window][clientIDNew]
 
-The *Service account* is now created
+The *OAuth account* is now created.
 
 ![Service account][serviceAccountDataNew]
 
-Copy the **Client ID** and **Email address** fields somewhere as you will use them later.
+Copy the **Client ID** and **Client Secret** fields somewhere as you will use them later.
 
-### 3. Generate a P12 key
+### 3. Create a Service Account
 
-Click on **Generate new P12 key**
+On the left side panel go to `Credentials > Create credentials` and click on the option *Service account key*.
 
-![generate new P12 key][serviceAccountNew]
+![new client ID][serviceAccountNew]
+
+In `Service account` select the option that has the name of the project, and in `Key type` select **P12** option, then click on *Create*.
+
+![new client ID][serviceAccount2New]
 
 A P12 file will download. e.g. `My project-84d807544f50.p12`. You will use this file later.
-
-![generate new P12 key][serviceAccount2New]
 
 ![generate new P12 key][serviceAccount3New]
 

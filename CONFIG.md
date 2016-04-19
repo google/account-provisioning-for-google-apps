@@ -48,11 +48,11 @@ A P12 file will download. e.g. `My project-84d807544f50.p12`. You will use this 
 
 ### 4. Enable the Admin SDK API
 
-On the left side panel go to `APIs & auth > APIs` and search for *admin sdk*. Click on the **Admin SDK** result
+On the left side panel go to `Overview > Google APIs` and search for *admin sdk*. Click on the **Admin SDK** result
 
 ![admin sdk api][adminsdkapiNew]
 
-Click on **Enable API**
+Click on **Enable**
 
 ![enable api][enableapiNew]
 

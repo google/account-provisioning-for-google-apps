@@ -46,6 +46,14 @@ A P12 file will download. e.g. `My project-84d807544f50.p12`. You will use this 
 
 ![Generate new P12 key][serviceAccountData]
 
+On the left side panel go to `Credentials` and click on the link *Manage service accounts*.
+
+![Manage Service Accounts][manageServiceAccounts]
+
+Copy the **Service account ID** of your project in somewhere as you will use it later. This is the **Email address** of your project.
+
+![Copy Client Email][getClientEmail]
+
 ### 4. Enable the Admin SDK API
 
 On the left side panel go to `Overview > Google APIs` and search for *admin sdk*. Click on the **Admin SDK** result
@@ -110,7 +118,7 @@ apis.GoogleAPIs.keyPath=./My project-84d807544f50.p12
 -------------
 
 ##### `apis.GoogleAPIs.serviceAccountEmail`
-Enter the Service account **Email address** you created in [step 2][step2]. Example: 
+Enter the Service account **Email address** you created in [step 3][step3]. Example: 
 ```properties
 apis.GoogleAPIs.serviceAccountEmail=1234567890123-abcdefghijklmnopqrstuvwxz01234567@developer.gserviceaccount.com
 ```
@@ -145,3 +153,5 @@ Great! The configuration is now complete. You can now start using the Account pr
 [createProject]: http://googledrive.com/host/0B0hbybT0K1l7fjR6aEt3bl9XZFVFS1RGV3RMNW16LXlIWmhuRXhUWGsxWndIV2p6cEtlSkE/createProject.png
 [appTypeOther]: http://googledrive.com/host/0BzU5of9bIQV0QmFxTDU4Y3BCLXc/appTypeOther.png
 [createServiceAccount]: http://googledrive.com/host/0BzU5of9bIQV0QmFxTDU4Y3BCLXc/createServiceAccount.png
+[manageServiceAccounts]: http://googledrive.com/host/0BzU5of9bIQV0QmFxTDU4Y3BCLXc/manageServiceAccounts.png
+[getClientEmail]: http://googledrive.com/host/0BzU5of9bIQV0QmFxTDU4Y3BCLXc/getClientEmail.png

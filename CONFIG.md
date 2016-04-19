@@ -14,21 +14,21 @@ Copy the **Project Name** you provided somewhere as you will use it later.
 
 The project dashboard will automatically open once the project is created.
 
-![dashboard][dash]
+![dashboard][dashNew]
 
 ### 2. Create a Service Account
 
 On the left side panel go to `APIs & auth > Credentials` and click on the button *Create new Client ID*
 
-![new client ID][cred]
+![new client ID][credNew]
 
 Under *Application type* select **Service account**, then click on *Create Client ID*
 
-![clientID window][clientID]
+![clientID window][clientIDNew]
 
 The *Service account* is now created
 
-![Service account][serviceAccountData]
+![Service account][serviceAccountDataNew]
 
 Copy the **Client ID** and **Email address** fields somewhere as you will use them later.
 
@@ -36,19 +36,23 @@ Copy the **Client ID** and **Email address** fields somewhere as you will use th
 
 Click on **Generate new P12 key**
 
-![generate new P12 key][serviceAccount]
+![generate new P12 key][serviceAccountNew]
 
 A P12 file will download. e.g. `My project-84d807544f50.p12`. You will use this file later.
+
+![generate new P12 key][serviceAccount2New]
+
+![generate new P12 key][serviceAccount3New]
 
 ### 4. Enable the Admin SDK API
 
 On the left side panel go to `APIs & auth > APIs` and search for *admin sdk*. Click on the **Admin SDK** result
 
-![admin sdk api][adminsdkapi]
+![admin sdk api][adminsdkapiNew]
 
 Click on **Enable API**
 
-![enable api][enableapi]
+![enable api][enableapiNew]
 
 ### 5. Enable the OAuth consumer key
 
@@ -137,3 +141,12 @@ Great! The configuration is now complete. You can now start using the Account pr
 [dash]: http://googledrive.com/host/0B0hbybT0K1l7fjR6aEt3bl9XZFVFS1RGV3RMNW16LXlIWmhuRXhUWGsxWndIV2p6cEtlSkE/dash.png
 [cred]: http://googledrive.com/host/0B0hbybT0K1l7fjR6aEt3bl9XZFVFS1RGV3RMNW16LXlIWmhuRXhUWGsxWndIV2p6cEtlSkE/cred.png
 [createProject]: http://googledrive.com/host/0B0hbybT0K1l7fjR6aEt3bl9XZFVFS1RGV3RMNW16LXlIWmhuRXhUWGsxWndIV2p6cEtlSkE/createProject.png
+[dashNew]: http://googledrive.com/host/0BzU5of9bIQV0QmFxTDU4Y3BCLXc/img02.png
+[credNew]: http://googledrive.com/host/0BzU5of9bIQV0QmFxTDU4Y3BCLXc/img03.png
+[clientIDNew]: http://googledrive.com/host/0BzU5of9bIQV0QmFxTDU4Y3BCLXc/img04.png
+[serviceAccountDataNew]: http://googledrive.com/host/0BzU5of9bIQV0QmFxTDU4Y3BCLXc/img05.png
+[serviceAccountNew]: http://googledrive.com/host/0BzU5of9bIQV0QmFxTDU4Y3BCLXc/img06.png
+[serviceAccount2New]: http://googledrive.com/host/0BzU5of9bIQV0QmFxTDU4Y3BCLXc/img07.png
+[serviceAccount3New]: http://googledrive.com/host/0BzU5of9bIQV0QmFxTDU4Y3BCLXc/img08.png
+[adminsdkapiNew]: http://googledrive.com/host/0BzU5of9bIQV0QmFxTDU4Y3BCLXc/img09.png
+[enableapiNew]: http://googledrive.com/host/0BzU5of9bIQV0QmFxTDU4Y3BCLXc/img10.png

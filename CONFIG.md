@@ -14,39 +14,53 @@ Copy the **Project Name** you provided somewhere as you will use it later.
 
 The project dashboard will automatically open once the project is created.
 
-![dashboard][dash]
+![Dashboard][dash]
 
-### 2. Create a Service Account
+### 2. Create an OAuth client ID
 
-On the left side panel go to `APIs & auth > Credentials` and click on the button *Create new Client ID*
+On the left side panel go to `Credentials > Create credentials` and click on the option *OAuth client ID*.
 
-![new client ID][cred]
+![New OAuth client ID][cred]
 
-Under *Application type* select **Service account**, then click on *Create Client ID*
+Under *Application type* select **Other**, then type a name and click on *Create*.
 
-![clientID window][clientID]
+![Select app type][appTypeOther]
 
-The *Service account* is now created
+The *OAuth account* is now created.
 
-![Service account][serviceAccountData]
+![Client ID generated][clientID]
 
-Copy the **Client ID** and **Email address** fields somewhere as you will use them later.
+Copy the **Client ID** and **Client Secret** fields somewhere as you will use them later.
 
-### 3. Generate a P12 key
+### 3. Create a Service Account
 
-Click on **Generate new P12 key**
+On the left side panel go to `Credentials > Create credentials` and click on the option *Service account key*.
 
-![generate new P12 key][serviceAccount]
+![New Service Account][serviceAccount]
+
+In `Service account` select the option that has the name of the project, in `Key type` select **P12** option, then click on *Create*.
+
+![Create Service Account][createServiceAccount]
 
 A P12 file will download. e.g. `My project-84d807544f50.p12`. You will use this file later.
 
+![Generate new P12 key][serviceAccountData]
+
+On the left side panel go to `Credentials` and click on the link *Manage service accounts*.
+
+![Manage Service Accounts][manageServiceAccounts]
+
+Copy the **Service account ID** of your project in somewhere as you will use it later. This is the **Email address** of your project.
+
+![Copy Client Email][getClientEmail]
+
 ### 4. Enable the Admin SDK API
 
-On the left side panel go to `APIs & auth > APIs` and search for *admin sdk*. Click on the **Admin SDK** result
+On the left side panel go to `Overview > Google APIs` and search for *admin sdk*. Click on the **Admin SDK** result
 
 ![admin sdk api][adminsdkapi]
 
-Click on **Enable API**
+Click on **Enable**
 
 ![enable api][enableapi]
 
@@ -104,7 +118,7 @@ apis.GoogleAPIs.keyPath=./My project-84d807544f50.p12
 -------------
 
 ##### `apis.GoogleAPIs.serviceAccountEmail`
-Enter the Service account **Email address** you created in [step 2][step2]. Example: 
+Enter the Service account **Email address** you created in [step 3][step3]. Example: 
 ```properties
 apis.GoogleAPIs.serviceAccountEmail=1234567890123-abcdefghijklmnopqrstuvwxz01234567@developer.gserviceaccount.com
 ```
@@ -123,17 +137,21 @@ apis.GoogleAPIs.appName=My project
 Great! The configuration is now complete. You can now start using the Account provisioning for Google Apps API in your Google Apps domain.
 
 [step1]: #1-create-a-developers-project
-[step2]: #2-create-a-service-account
-[step3]: #3-generate-a-p12-key
+[step2]: #2-create-an-oauth-client-id
+[step3]: #3-create-a-service-account
 [authorizeservice]: http://googledrive.com/host/0B0hbybT0K1l7fjR6aEt3bl9XZFVFS1RGV3RMNW16LXlIWmhuRXhUWGsxWndIV2p6cEtlSkE/authorizeservice.png
-[serviceAccountData]: http://googledrive.com/host/0B0hbybT0K1l7fjR6aEt3bl9XZFVFS1RGV3RMNW16LXlIWmhuRXhUWGsxWndIV2p6cEtlSkE/serviceAccountData.png
+[serviceAccountData]: http://googledrive.com/host/0BzU5of9bIQV0QmFxTDU4Y3BCLXc/serviceAccountData.png
 [manageclient]: http://googledrive.com/host/0B0hbybT0K1l7fjR6aEt3bl9XZFVFS1RGV3RMNW16LXlIWmhuRXhUWGsxWndIV2p6cEtlSkE/manageclient.png
 [oauthset]: http://googledrive.com/host/0B0hbybT0K1l7fjR6aEt3bl9XZFVFS1RGV3RMNW16LXlIWmhuRXhUWGsxWndIV2p6cEtlSkE/oauthset.png
 [oauthkey]: http://googledrive.com/host/0B0hbybT0K1l7fjR6aEt3bl9XZFVFS1RGV3RMNW16LXlIWmhuRXhUWGsxWndIV2p6cEtlSkE/oauthkey.png
-[enableapi]: http://googledrive.com/host/0B0hbybT0K1l7fjR6aEt3bl9XZFVFS1RGV3RMNW16LXlIWmhuRXhUWGsxWndIV2p6cEtlSkE/enableapi.png
-[adminsdkapi]: http://googledrive.com/host/0B0hbybT0K1l7fjR6aEt3bl9XZFVFS1RGV3RMNW16LXlIWmhuRXhUWGsxWndIV2p6cEtlSkE/adminsdkapi.png
-[serviceAccount]: http://googledrive.com/host/0B0hbybT0K1l7fjR6aEt3bl9XZFVFS1RGV3RMNW16LXlIWmhuRXhUWGsxWndIV2p6cEtlSkE/serviceAccount.png
-[clientID]: http://googledrive.com/host/0B0hbybT0K1l7fjR6aEt3bl9XZFVFS1RGV3RMNW16LXlIWmhuRXhUWGsxWndIV2p6cEtlSkE/clientID.png
-[dash]: http://googledrive.com/host/0B0hbybT0K1l7fjR6aEt3bl9XZFVFS1RGV3RMNW16LXlIWmhuRXhUWGsxWndIV2p6cEtlSkE/dash.png
-[cred]: http://googledrive.com/host/0B0hbybT0K1l7fjR6aEt3bl9XZFVFS1RGV3RMNW16LXlIWmhuRXhUWGsxWndIV2p6cEtlSkE/cred.png
+[enableapi]: http://googledrive.com/host/0BzU5of9bIQV0QmFxTDU4Y3BCLXc/enableapi.png
+[adminsdkapi]: http://googledrive.com/host/0BzU5of9bIQV0QmFxTDU4Y3BCLXc/adminsdkapi.png
+[serviceAccount]: http://googledrive.com/host/0BzU5of9bIQV0QmFxTDU4Y3BCLXc/serviceAccount.png
+[clientID]: http://googledrive.com/host/0BzU5of9bIQV0QmFxTDU4Y3BCLXc/clientID.png
+[dash]: http://googledrive.com/host/0BzU5of9bIQV0QmFxTDU4Y3BCLXc/dash.png
+[cred]: http://googledrive.com/host/0BzU5of9bIQV0QmFxTDU4Y3BCLXc/cred.png
 [createProject]: http://googledrive.com/host/0B0hbybT0K1l7fjR6aEt3bl9XZFVFS1RGV3RMNW16LXlIWmhuRXhUWGsxWndIV2p6cEtlSkE/createProject.png
+[appTypeOther]: http://googledrive.com/host/0BzU5of9bIQV0QmFxTDU4Y3BCLXc/appTypeOther.png
+[createServiceAccount]: http://googledrive.com/host/0BzU5of9bIQV0QmFxTDU4Y3BCLXc/createServiceAccount.png
+[manageServiceAccounts]: http://googledrive.com/host/0BzU5of9bIQV0QmFxTDU4Y3BCLXc/manageServiceAccounts.png
+[getClientEmail]: http://googledrive.com/host/0BzU5of9bIQV0QmFxTDU4Y3BCLXc/getClientEmail.png

@@ -14,21 +14,21 @@ Copy the **Project Name** you provided somewhere as you will use it later.
 
 The project dashboard will automatically open once the project is created.
 
-![dashboard][dashNew]
+![Dashboard][dash]
 
 ### 2. Create an OAuth client ID
 
 On the left side panel go to `Credentials > Create credentials` and click on the option *OAuth client ID*.
 
-![new client ID][credNew]
+![New OAuth client ID][cred]
 
 Under *Application type* select **Other**, then type a name and click on *Create*.
 
-![clientID window][clientIDNew]
+![Select app type][appTypeOther]
 
 The *OAuth account* is now created.
 
-![Service account][serviceAccountDataNew]
+![Client ID generated][clientID]
 
 Copy the **Client ID** and **Client Secret** fields somewhere as you will use them later.
 
@@ -36,25 +36,25 @@ Copy the **Client ID** and **Client Secret** fields somewhere as you will use th
 
 On the left side panel go to `Credentials > Create credentials` and click on the option *Service account key*.
 
-![new client ID][serviceAccountNew]
+![New Service Account][serviceAccount]
 
-In `Service account` select the option that has the name of the project, and in `Key type` select **P12** option, then click on *Create*.
+In `Service account` select the option that has the name of the project, in `Key type` select **P12** option, then click on *Create*.
 
-![new client ID][serviceAccount2New]
+![Create Service Account][createServiceAccount]
 
 A P12 file will download. e.g. `My project-84d807544f50.p12`. You will use this file later.
 
-![generate new P12 key][serviceAccount3New]
+![Generate new P12 key][serviceAccountData]
 
 ### 4. Enable the Admin SDK API
 
 On the left side panel go to `Overview > Google APIs` and search for *admin sdk*. Click on the **Admin SDK** result
 
-![admin sdk api][adminsdkapiNew]
+![admin sdk api][adminsdkapi]
 
 Click on **Enable**
 
-![enable api][enableapiNew]
+![enable api][enableapi]
 
 ### 5. Enable the OAuth consumer key
 
@@ -132,23 +132,16 @@ Great! The configuration is now complete. You can now start using the Account pr
 [step2]: #2-create-a-service-account
 [step3]: #3-generate-a-p12-key
 [authorizeservice]: http://googledrive.com/host/0B0hbybT0K1l7fjR6aEt3bl9XZFVFS1RGV3RMNW16LXlIWmhuRXhUWGsxWndIV2p6cEtlSkE/authorizeservice.png
-[serviceAccountData]: http://googledrive.com/host/0B0hbybT0K1l7fjR6aEt3bl9XZFVFS1RGV3RMNW16LXlIWmhuRXhUWGsxWndIV2p6cEtlSkE/serviceAccountData.png
+[serviceAccountData]: http://googledrive.com/host/0BzU5of9bIQV0QmFxTDU4Y3BCLXc/serviceAccountData.png
 [manageclient]: http://googledrive.com/host/0B0hbybT0K1l7fjR6aEt3bl9XZFVFS1RGV3RMNW16LXlIWmhuRXhUWGsxWndIV2p6cEtlSkE/manageclient.png
 [oauthset]: http://googledrive.com/host/0B0hbybT0K1l7fjR6aEt3bl9XZFVFS1RGV3RMNW16LXlIWmhuRXhUWGsxWndIV2p6cEtlSkE/oauthset.png
 [oauthkey]: http://googledrive.com/host/0B0hbybT0K1l7fjR6aEt3bl9XZFVFS1RGV3RMNW16LXlIWmhuRXhUWGsxWndIV2p6cEtlSkE/oauthkey.png
 [enableapi]: http://googledrive.com/host/0B0hbybT0K1l7fjR6aEt3bl9XZFVFS1RGV3RMNW16LXlIWmhuRXhUWGsxWndIV2p6cEtlSkE/enableapi.png
-[adminsdkapi]: http://googledrive.com/host/0B0hbybT0K1l7fjR6aEt3bl9XZFVFS1RGV3RMNW16LXlIWmhuRXhUWGsxWndIV2p6cEtlSkE/adminsdkapi.png
-[serviceAccount]: http://googledrive.com/host/0B0hbybT0K1l7fjR6aEt3bl9XZFVFS1RGV3RMNW16LXlIWmhuRXhUWGsxWndIV2p6cEtlSkE/serviceAccount.png
-[clientID]: http://googledrive.com/host/0B0hbybT0K1l7fjR6aEt3bl9XZFVFS1RGV3RMNW16LXlIWmhuRXhUWGsxWndIV2p6cEtlSkE/clientID.png
-[dash]: http://googledrive.com/host/0B0hbybT0K1l7fjR6aEt3bl9XZFVFS1RGV3RMNW16LXlIWmhuRXhUWGsxWndIV2p6cEtlSkE/dash.png
-[cred]: http://googledrive.com/host/0B0hbybT0K1l7fjR6aEt3bl9XZFVFS1RGV3RMNW16LXlIWmhuRXhUWGsxWndIV2p6cEtlSkE/cred.png
+[adminsdkapi]: http://googledrive.com/host/0BzU5of9bIQV0QmFxTDU4Y3BCLXc/adminsdkapi.png
+[serviceAccount]: http://googledrive.com/host/0BzU5of9bIQV0QmFxTDU4Y3BCLXc/serviceAccount.png
+[clientID]: http://googledrive.com/host/0BzU5of9bIQV0QmFxTDU4Y3BCLXc/clientID.png
+[dash]: http://googledrive.com/host/0BzU5of9bIQV0QmFxTDU4Y3BCLXc/dash.png
+[cred]: http://googledrive.com/host/0BzU5of9bIQV0QmFxTDU4Y3BCLXc/cred.png
 [createProject]: http://googledrive.com/host/0B0hbybT0K1l7fjR6aEt3bl9XZFVFS1RGV3RMNW16LXlIWmhuRXhUWGsxWndIV2p6cEtlSkE/createProject.png
-[dashNew]: http://googledrive.com/host/0BzU5of9bIQV0QmFxTDU4Y3BCLXc/img02.png
-[credNew]: http://googledrive.com/host/0BzU5of9bIQV0QmFxTDU4Y3BCLXc/img03.png
-[clientIDNew]: http://googledrive.com/host/0BzU5of9bIQV0QmFxTDU4Y3BCLXc/img04.png
-[serviceAccountDataNew]: http://googledrive.com/host/0BzU5of9bIQV0QmFxTDU4Y3BCLXc/img05.png
-[serviceAccountNew]: http://googledrive.com/host/0BzU5of9bIQV0QmFxTDU4Y3BCLXc/img06.png
-[serviceAccount2New]: http://googledrive.com/host/0BzU5of9bIQV0QmFxTDU4Y3BCLXc/img07.png
-[serviceAccount3New]: http://googledrive.com/host/0BzU5of9bIQV0QmFxTDU4Y3BCLXc/img08.png
-[adminsdkapiNew]: http://googledrive.com/host/0BzU5of9bIQV0QmFxTDU4Y3BCLXc/img09.png
-[enableapiNew]: http://googledrive.com/host/0BzU5of9bIQV0QmFxTDU4Y3BCLXc/img10.png
+[appTypeOther]: http://googledrive.com/host/0BzU5of9bIQV0QmFxTDU4Y3BCLXc/appTypeOther.png
+[createServiceAccount]: http://googledrive.com/host/0BzU5of9bIQV0QmFxTDU4Y3BCLXc/createServiceAccount.png

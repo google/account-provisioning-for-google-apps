@@ -129,8 +129,8 @@ apis.GoogleAPIs.appName=My project
 Great! The configuration is now complete. You can now start using the Account provisioning for Google Apps API in your Google Apps domain.
 
 [step1]: #1-create-a-developers-project
-[step2]: #2-create-a-service-account
-[step3]: #3-generate-a-p12-key
+[step2]: #2-create-an-oauth-client-id
+[step3]: #3-create-a-service-account
 [authorizeservice]: http://googledrive.com/host/0B0hbybT0K1l7fjR6aEt3bl9XZFVFS1RGV3RMNW16LXlIWmhuRXhUWGsxWndIV2p6cEtlSkE/authorizeservice.png
 [serviceAccountData]: http://googledrive.com/host/0BzU5of9bIQV0QmFxTDU4Y3BCLXc/serviceAccountData.png
 [manageclient]: http://googledrive.com/host/0B0hbybT0K1l7fjR6aEt3bl9XZFVFS1RGV3RMNW16LXlIWmhuRXhUWGsxWndIV2p6cEtlSkE/manageclient.png

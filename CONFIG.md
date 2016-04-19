@@ -136,7 +136,7 @@ Great! The configuration is now complete. You can now start using the Account pr
 [manageclient]: http://googledrive.com/host/0B0hbybT0K1l7fjR6aEt3bl9XZFVFS1RGV3RMNW16LXlIWmhuRXhUWGsxWndIV2p6cEtlSkE/manageclient.png
 [oauthset]: http://googledrive.com/host/0B0hbybT0K1l7fjR6aEt3bl9XZFVFS1RGV3RMNW16LXlIWmhuRXhUWGsxWndIV2p6cEtlSkE/oauthset.png
 [oauthkey]: http://googledrive.com/host/0B0hbybT0K1l7fjR6aEt3bl9XZFVFS1RGV3RMNW16LXlIWmhuRXhUWGsxWndIV2p6cEtlSkE/oauthkey.png
-[enableapi]: http://googledrive.com/host/0B0hbybT0K1l7fjR6aEt3bl9XZFVFS1RGV3RMNW16LXlIWmhuRXhUWGsxWndIV2p6cEtlSkE/enableapi.png
+[enableapi]: http://googledrive.com/host/0BzU5of9bIQV0QmFxTDU4Y3BCLXc/enableapi.png
 [adminsdkapi]: http://googledrive.com/host/0BzU5of9bIQV0QmFxTDU4Y3BCLXc/adminsdkapi.png
 [serviceAccount]: http://googledrive.com/host/0BzU5of9bIQV0QmFxTDU4Y3BCLXc/serviceAccount.png
 [clientID]: http://googledrive.com/host/0BzU5of9bIQV0QmFxTDU4Y3BCLXc/clientID.png

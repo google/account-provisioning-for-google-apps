@@ -675,12 +675,12 @@ you can navigate through each of the methods: `suggest`, `select` and `create`.
 [installing]: #installing
 [config]: #configuration-properties
 [customfields]: #customfields
-[csv]: http://googledrive.com/host/0B0hbybT0K1l7fjR6aEt3bl9XZFVFS1RGV3RMNW16LXlIWmhuRXhUWGsxWndIV2p6cEtlSkE/csv.png
+[csv]: https://hallowed-scene-147511.appspot.com/public/csv.png
 [useCasesDiagram]: http://googledrive.com/host/0B0hbybT0K1l7fjVIYnZDdG5jMjg3QUwyOFN3UVFTSFg4cnZHQ3VIU3JWc25hU0RWVlo2TXM/diagram3.png
 [tokens]: http://googledrive.com/host/0B0hbybT0K1l7fjVIYnZDdG5jMjg3QUwyOFN3UVFTSFg4cnZHQ3VIU3JWc25hU0RWVlo2TXM/tokens.png
-[bulkGif]: http://googledrive.com/host/0B0hbybT0K1l7fjR6aEt3bl9XZFVFS1RGV3RMNW16LXlIWmhuRXhUWGsxWndIV2p6cEtlSkE/bulk-demo.gif
-[selfGif]: http://googledrive.com/host/0B0hbybT0K1l7fjR6aEt3bl9XZFVFS1RGV3RMNW16LXlIWmhuRXhUWGsxWndIV2p6cEtlSkE/self-demo.gif
-[demoInfo]: http://googledrive.com/host/0B0hbybT0K1l7fjR6aEt3bl9XZFVFS1RGV3RMNW16LXlIWmhuRXhUWGsxWndIV2p6cEtlSkE/demoInfo.png
+[bulkGif]: https://hallowed-scene-147511.appspot.com/public/bulk-demo.gif
+[selfGif]: https://hallowed-scene-147511.appspot.com/public/self-demo.gif
+[demoInfo]: https://hallowed-scene-147511.appspot.com/public/demoInfo.png
 [configGuide]: https://github.com/google/account-provisioning-for-google-apps/blob/master/CONFIG.md
 [contributing]: https://github.com/google/account-provisioning-for-google-apps/blob/master/CONTRIBUTING.txt
 [license]: https://github.com/google/account-provisioning-for-google-apps/blob/master/LICENSE.txt

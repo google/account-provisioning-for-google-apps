@@ -676,8 +676,8 @@ you can navigate through each of the methods: `suggest`, `select` and `create`.
 [config]: #configuration-properties
 [customfields]: #customfields
 [csv]: https://hallowed-scene-147511.appspot.com/public/csv.png
-[useCasesDiagram]: http://googledrive.com/host/0B0hbybT0K1l7fjVIYnZDdG5jMjg3QUwyOFN3UVFTSFg4cnZHQ3VIU3JWc25hU0RWVlo2TXM/diagram3.png
-[tokens]: http://googledrive.com/host/0B0hbybT0K1l7fjVIYnZDdG5jMjg3QUwyOFN3UVFTSFg4cnZHQ3VIU3JWc25hU0RWVlo2TXM/tokens.png
+[useCasesDiagram]: https://hallowed-scene-147511.appspot.com/public/diagram3.png
+[tokens]: https://hallowed-scene-147511.appspot.com/public/tokens.png
 [bulkGif]: https://hallowed-scene-147511.appspot.com/public/bulk-demo.gif
 [selfGif]: https://hallowed-scene-147511.appspot.com/public/self-demo.gif
 [demoInfo]: https://hallowed-scene-147511.appspot.com/public/demoInfo.png

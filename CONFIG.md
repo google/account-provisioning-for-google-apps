@@ -38,13 +38,13 @@ On the left side panel go to `Credentials > Create credentials` and click on the
 
 ![New Service Account][serviceAccount]
 
-In `Service account` select the option that has the name of the project, in `Key type` select **P12** option, then click on *Create*.
+In `Service account` select the option that has the name of the project, in `Key type` select **JSON** option, then click on *Create*.
 
 ![Create Service Account][createServiceAccount]
 
-A P12 file will download. e.g. `My project-84d807544f50.p12`. You will use this file later.
+A JSON file will download. e.g. `My project-84d807544f50.json`. You will use this file later.
 
-![Generate new P12 key][serviceAccountData]
+![Generate new JSON key][serviceAccountData]
 
 On the left side panel go to `Credentials` and click on the link *Manage service accounts*.
 

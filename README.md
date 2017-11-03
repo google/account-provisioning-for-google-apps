@@ -681,6 +681,6 @@ you can navigate through each of the methods: `suggest`, `select` and `create`.
 [bulkGif]: https://hallowed-scene-147511.appspot.com/public/bulk-demo.gif
 [selfGif]: https://hallowed-scene-147511.appspot.com/public/self-demo.gif
 [demoInfo]: https://hallowed-scene-147511.appspot.com/public/demoInfo.png
-[configGuide]: https://github.com/google/account-provisioning-for-google-apps/blob/master/CONFIG.md
-[contributing]: https://github.com/google/account-provisioning-for-google-apps/blob/master/CONTRIBUTING.txt
-[license]: https://github.com/google/account-provisioning-for-google-apps/blob/master/LICENSE.txt
+[configGuide]: https://github.com/toxtli/account-provisioning-for-google-apps/blob/master/CONFIG.md
+[contributing]: https://github.com/toxtli/account-provisioning-for-google-apps/blob/master/CONTRIBUTING.txt
+[license]: https://github.com/toxtli/account-provisioning-for-google-apps/blob/master/LICENSE.txt

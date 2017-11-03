@@ -12,22 +12,22 @@
  * the License.
  */
 
-package apps.provisioning.server.apis;
+package apps.provisioning.server.apis.apps.provisioning.server.apis;
 
 import java.io.IOException;
 import java.security.GeneralSecurityException;
 import java.util.ArrayList;
 import java.util.List;
 
-import apps.provisioning.config.ConfigData;
-import apps.provisioning.server.account.UsernameManager;
-import apps.provisioning.server.account.data.UsernameDataSource;
-
 import com.google.api.client.googleapis.auth.oauth2.GoogleCredential;
 import com.google.api.services.admin.directory.Directory;
 import com.google.api.services.admin.directory.model.User;
 import com.google.api.services.admin.directory.model.UserName;
 import com.google.api.services.admin.directory.model.Users;
+
+import apps.provisioning.config.ConfigData;
+import apps.provisioning.server.account.UsernameManager;
+import apps.provisioning.server.account.data.UsernameDataSource;
 
 /**
  * Manages the Admin SDK service.
@@ -68,7 +68,8 @@ public class GoogleDirectory extends GoogleClient implements UsernameDataSource 
    */
   public GoogleDirectory(ConfigData config) throws GeneralSecurityException, IOException, Exception {
     super(config);
-    credential = getCredentialForServiceAccount(serviceAccountEmail, keyPath);
+    credential = getCredential(serviceAccountEmail, keyPath);
+    credential.refreshToken();
     directory = createAuthorizedClient(appName, credential);
     // Forces Google Apps authentication (it happens in the first API call) to prevent delay in the
     // next API call (up to 30 seconds).

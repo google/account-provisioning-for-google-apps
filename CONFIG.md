@@ -110,9 +110,9 @@ apis.GoogleAPIs.authUser=you@yourdomain.com
 -------------
 
 ##### `apis.GoogleAPIs.keyPath`
-Move the P12 file you created in [step 3][step3] to the location where the `appsProvisioning-0.0.1.jar` file is located. Set the `keyPath` value to your P12 file location. Example:
+Move the JSON file you created in [step 3][step3] to the location where the `appsProvisioning-0.0.1.jar` file is located. Set the `keyPath` value to your JSON file location. Example:
 ```properties
-apis.GoogleAPIs.keyPath=./My project-84d807544f50.p12
+apis.GoogleAPIs.keyPath=./My project-84d807544f50.json
 ```
 
 -------------

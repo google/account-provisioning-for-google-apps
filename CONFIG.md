@@ -64,29 +64,15 @@ Click on **Enable**
 
 ![enable api][enableapi]
 
-### 5. Enable the OAuth consumer key
+### 5. Authorize the Admin SDK API for your Service Account Client
 
-Go to https://admin.google.com and navigate to `Security > Advanced settings > Manage OAuth domain key`
-
-> If you don't see the *Advanced settings* click on *Show more*
-
-![oauth key][oauthkey]
-
-Check the **Enable this consumer key** box
-
-![oauth enabled][oauthset]
-
-### 6. Authorize the Admin SDK API for your Service Account Client
-
-Finally, navigate to `Security > Advanced settings > Manage OAuth domain key`
-
-![Manage OAuth domain key][manageclient]
+Navigate to Security > Advanced settings > Manage API client access 
 
 Enter the **Client ID** that was created in [step 2][step2] in the *Client Name* input box. In the *One or More API Scopes* input box enter `https://www.googleapis.com/auth/admin.directory.user`. Click on **Authorize**
 
 ![authorize service][authorizeservice]
 
-### 7. Fill out the API configuration fields
+### 6. Fill out the API configuration fields
 
 Awesome! You now have everything you need to configure the API.
 
@@ -139,9 +125,9 @@ Great! The configuration is now complete. You can now start using the Account pr
 [step1]: #1-create-a-developers-project
 [step2]: #2-create-an-oauth-client-id
 [step3]: #3-create-a-service-account
-[authorizeservice]: https://hallowed-scene-147511.appspot.com/public/authorizeservice.png
+[authorizeservice]: https://preview.ibb.co/cpmL5c/apiaccess.jpg
 [serviceAccountData]: https://hallowed-scene-147511.appspot.com/public/serviceAccountData.png
-[manageclient]: https://hallowed-scene-147511.appspot.com/public/manageclient.png
+[manageclient]: https://preview.ibb.co/cpmL5c/apiaccess.jpg
 [oauthset]: https://hallowed-scene-147511.appspot.com/public/oauthset.png
 [oauthkey]: https://hallowed-scene-147511.appspot.com/public/oauthkey.png
 [enableapi]: https://hallowed-scene-147511.appspot.com/public/enableapi.png
@@ -152,6 +138,6 @@ Great! The configuration is now complete. You can now start using the Account pr
 [cred]: https://hallowed-scene-147511.appspot.com/public/cred.png
 [createProject]: https://hallowed-scene-147511.appspot.com/public/createProject.png
 [appTypeOther]: https://hallowed-scene-147511.appspot.com/public/appTypeOther.png
-[createServiceAccount]: https://hallowed-scene-147511.appspot.com/public/createServiceAccount.png
+[createServiceAccount]: https://image.ibb.co/kFs4WH/json.jpg
 [manageServiceAccounts]: https://hallowed-scene-147511.appspot.com/public/manageServiceAccounts.png
 [getClientEmail]: https://hallowed-scene-147511.appspot.com/public/getClientEmail.png

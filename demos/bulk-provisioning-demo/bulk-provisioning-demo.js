@@ -10,13 +10,13 @@
  * The address of the server hosting the REST API.
  * {string}
  */
-var API_HOST = 'http://localhost:8080';
+const API_HOST = 'http://localhost:8080';
 
 /**
  * The password of all the created accounts.
  * {string}
  */
-var DEFAULT_PASSWORD = '12345678';
+const DEFAULT_PASSWORD = '12345678';
 
 // ==========================
 
@@ -35,9 +35,9 @@ window.domain;
  * @param {Function} callback The function to call when the API method returns a
  * value.
  */
-var sendPostRequest = function(action, parameters, callback) {
-  var url = API_HOST + /rest/ + action;
-  var xhr = new XMLHttpRequest();
+const sendPostRequest = (action, parameters, callback) => {
+  let url = API_HOST + /rest/ + action;
+  let xhr = new XMLHttpRequest();
   xhr.onload = function() {
     callback(this.responseText);
   };
@@ -54,8 +54,8 @@ var sendPostRequest = function(action, parameters, callback) {
  * @param {Function} suggestCallback The function to call when the suggest API
  * method returns a value.
  */
-var suggest = function(firstname, lastname, suggestCallback) {
-  var parameters = '{' +
+const suggest = (firstname, lastname, suggestCallback) => {
+  let parameters = '{' +
       '"firstname":"' + firstname + '",' +
       '"lastname":"' + lastname +
   '"}';
@@ -71,8 +71,8 @@ var suggest = function(firstname, lastname, suggestCallback) {
  * @param {Function} selectCallback The function to call when the select API
  * method returns a value.
  */
-var select = function(username, suggestions, selectCallback) {
-  var parameters = '{' +
+const select = (username, suggestions, selectCallback) => {
+  let parameters = '{' +
     '"username":"' + username + '",' +
     '"suggestions":' + suggestions +
   '}';
@@ -90,8 +90,8 @@ var select = function(username, suggestions, selectCallback) {
  * @param {Function} createCallback The function to call when the create API
  * method is done.
  */
-var create = function(username, firstname, lastname, password, createCallback) {
-  var parameters = '{' +
+const create = (username, firstname, lastname, password, createCallback) => {
+  let parameters = '{' +
     '"username":"' + username + '",' +
     '"firstname":"' + firstname + '",' +
     '"lastname":"' + lastname + '",'+
@@ -106,34 +106,34 @@ var create = function(username, firstname, lastname, password, createCallback) {
  * Google Apps REST API.
  * @param {number} id The numeric ID of the view fields to create the account.
  */
-var generateGoogleAppsAccount = function(id) {
-  var firstname = document.getElementById('firstname' + id).value;
-  var lastname = document.getElementById('lastname' + id).value;
+const generateGoogleAppsAccount = (id) => {
+  let firstname = document.getElementById('firstname' + id).value;
+  let lastname = document.getElementById('lastname' + id).value;
 
-  if (firstname == '' || lastname == '') {
+  if (String(firstname) === '' || String(lastname) === '') {
     // Skipping.
     return;
   }
 
   console.log('Generating account for: ' + firstname + ' ' +lastname);
-  var selectedUsername;
+  let selectedUsername;
 
   // Displays the account that was created.
-  var createCallback = function(responseText) {
-    var response = JSON.parse(responseText);
+  const createCallback = (responseText) => {
+    let response = JSON.parse(responseText);
     if (response['errorMessage']) {
       throw Error(response['errorMessage']);
     }
     console.log(responseText);
-    var usernameSpan = document.getElementById('username' + id);
+    let usernameSpan = document.getElementById('username' + id);
     usernameSpan.innerHTML = selectedUsername + '@' + window.domain;
-    var usernameDiv = document.getElementById('usernameDiv' + id);
+    let usernameDiv = document.getElementById('usernameDiv' + id);
     usernameDiv.style.display = 'inline';
   }
 
   // Create a Google Apps account when selection is done.
-  var selectCallback = function(responseText) {
-    var response = JSON.parse(responseText);
+  const selectCallback = (responseText) => {
+    let response = JSON.parse(responseText);
     if (response['errorMessage']) {
       throw Error(response['errorMessage']);
     }
@@ -144,8 +144,8 @@ var generateGoogleAppsAccount = function(id) {
   }
 
   // Select the first username suggestion when suggestions are generated.
-  var suggestCallback = function(responseText) {
-    var suggestions = JSON.parse(responseText);
+  const suggestCallback = (responseText) => {
+    let suggestions = JSON.parse(responseText);
     // For self account creation, suggestions can be presented to the user
     // through a website.
     // For bulk account creation the first suggestion can be selected, as shown
@@ -167,10 +167,10 @@ var generateGoogleAppsAccount = function(id) {
 /**
  * Creates all the accounts in the Google Directory.
  */
-var createAccounts = function() {
+const createAccounts = () => {
   // NOTE: Take into account AdminSDK API calls/second limits when creating in
   // bulk.
-  for (var i = 1; i <= 5; i++) {
+  for (let i = 1; i <= 5; i++) {
     generateGoogleAppsAccount(i);
   }
 }
@@ -179,14 +179,14 @@ var createAccounts = function() {
 /**
  * Retrieves and sets config parameters from the REST API server.
  */
-setupConfig = function() {
-  var hostUrl = document.getElementById('hostUrl');
+const setupConfig = () => {
+  let hostUrl = document.getElementById('hostUrl');
   hostUrl.href = API_HOST + '/rest/config';
   hostUrl.innerHTML = API_HOST;
-  var loadingMessage = document.getElementById('loadingMessage');
+  let loadingMessage = document.getElementById('loadingMessage');
   loadingMessage.style.display = 'inherit';
-  var configCallback = function(responseText) {
-    var configMap = JSON.parse(responseText);
+  let configCallback = function(responseText) {
+    let configMap = JSON.parse(responseText);
     console.log(configMap);
     domain = configMap['domain'];
 
@@ -195,19 +195,19 @@ setupConfig = function() {
         '<strong>Connection successful!</strong><br/><br/>' +
         'Google Apps Domain: <strong>' + domain + '</strong><br/><br/>' +
         'RESTful API Host: <strong>' + API_HOST + '</strong>';
-    var hideConfigSuccessfulDiv = function() {
+    let hideConfigSuccessfulDiv = () => {
       document.getElementById('loadingDiv').style.display = 'none';
     };
     setTimeout(hideConfigSuccessfulDiv, 2500);
   };
-  this.sendPostRequest('config', '', configCallback);
+  sendPostRequest('config', '', configCallback);
 }
 
 
 /**
  * Initializes the bulk provisioning demo.
  */
-var initApp = function() {
+const initApp = () => {
   document.getElementById('passwordSpan').innerHTML = DEFAULT_PASSWORD;
   setupConfig();
 }

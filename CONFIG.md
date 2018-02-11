@@ -38,7 +38,7 @@ On the left side panel go to `Credentials > Create credentials` and click on the
 
 ![New Service Account][serviceAccount]
 
-In `Service account` select the option that has the name of the project, in `Key type` select **JSON** option, then click on *Create*.
+In `Service account` select the option that Create new service account key, in `Key type` select **JSON** option, then click on *Create*.
 
 ![Create Service Account][createServiceAccount]
 
@@ -54,6 +54,8 @@ Copy the **Service account ID** of your project in somewhere as you will use it 
 
 ![Copy Client Email][getClientEmail]
 
+Click on create new Service Account. Give it a name of your choice. Also check the option "Furnish a new private key". Select key type to be JSON. Click on create. Also note the client ID
+
 ### 4. Enable the Admin SDK API
 
 On the left side panel go to `Overview > Google APIs` and search for *admin sdk*. Click on the **Admin SDK** result
@@ -65,10 +67,11 @@ Click on **Enable**
 ![enable api][enableapi]
 
 ### 5. Authorize the Admin SDK API for your Service Account Client
+Go to http://admin.google.com/. Login with your credentials.
 
-Navigate to Security > Advanced settings > Manage API client access 
+Click on the hamburger sign on top left corner then: Navigate to Security > Advanced settings > Manage API client access 
 
-Enter the **Client ID** that was created in [step 2][step2] in the *Client Name* input box. In the *One or More API Scopes* input box enter `https://www.googleapis.com/auth/admin.directory.user`. Click on **Authorize**
+Enter the **Client ID** that was created in [step 3][step3] in the *Client Name* input box. In the *One or More API Scopes* input box enter `https://www.googleapis.com/auth/admin.directory.user`. Click on **Authorize**
 
 ![authorize service][authorizeservice]
 
@@ -96,7 +99,7 @@ apis.GoogleAPIs.authUser=you@yourdomain.com
 -------------
 
 ##### `apis.GoogleAPIs.keyPath`
-Move the JSON file you created in [step 3][step3] to the location where the `appsProvisioning-0.0.1.jar` file is located. Set the `keyPath` value to your JSON file location. Example:
+Move the JSON file you created in [step 3][step3](i.e. service account) to the location where the `appsProvisioning-0.0.1.jar` file is located. Set the `keyPath` value to your JSON file location. Example:
 ```properties
 apis.GoogleAPIs.keyPath=./My project-84d807544f50.json
 ```

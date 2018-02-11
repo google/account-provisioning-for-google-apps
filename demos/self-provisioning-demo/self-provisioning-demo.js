@@ -9,7 +9,7 @@
  * The address of the server hosting the REST API.
  * {string}
  */
-var API_HOST = 'http://localhost:8080';
+const API_HOST = 'http://localhost:8080';
 
 // ==========================
 
@@ -18,7 +18,7 @@ var API_HOST = 'http://localhost:8080';
  * Contains all the account provisioning logic to get available usernames,
  * create a Google Apps account and present results in the HTML view.
  */
-AccountProvisioningApp = function() {
+AccountProvisioningApp = function () {
   /**
    * The firstname HTML input element.
    * {Element}
@@ -156,8 +156,8 @@ AccountProvisioningApp.prototype.suggestedUsernamesTimeout;
  */
 AccountProvisioningApp.prototype.maybeDrawOptions = function() {
   if (document.getElementById('r1') == null) {
-    var optionsHtml = "";
-    for (var i = 1; i <= this.numberOfSuggestions; i++) {
+    let optionsHtml = "";
+    for (let i = 1; i <= this.numberOfSuggestions; i++) {
       optionsHtml += '<input id="r' + i + '" type="radio" name="usernames">' +
           '<span id="r' + i + '-label"></span><br/>';
     }
@@ -181,10 +181,10 @@ AccountProvisioningApp.prototype.addListeners = function() {
  * Updates the countdown used to indicate when suggestions will expire.
  */
 AccountProvisioningApp.prototype.updateTimeout = function() {
-  var app = window['app'];
-  var countdownElement = document.getElementById('countdown');
+  let app = window['app'];
+  let countdownElement = document.getElementById('countdown');
   countdownElement.innerHTML = ' ' + (app.secondsLeft--) + ' seconds.';
-  var countdownContainer = document.getElementById('countdownContainer');
+  let countdownContainer = document.getElementById('countdownContainer');
   // Only show the countdown element the last 30 seconds.
   if (app.secondsLeft > 0 && app.secondsLeft < 30) {
     HtmlUtils.showElement(countdownContainer);
@@ -206,10 +206,10 @@ AccountProvisioningApp.prototype.updateTimeout = function() {
  * @return {?string} The selected username, if any.
  */
 AccountProvisioningApp.prototype.getSelectedUsername = function() {
-  var i = 1;
+  let i = 1;
   while (i <= this.numberOfSuggestions) {
-    var radioButtonId = 'r' + i;
-    var radioButtonElement = document.getElementById(radioButtonId);
+    let radioButtonId = 'r' + i;
+    let radioButtonElement = document.getElementById(radioButtonId);
     if (radioButtonElement.checked) {
       return radioButtonElement.value;
     }
@@ -232,7 +232,7 @@ AccountProvisioningApp.prototype.createAccount = function() {
     alert('Select a username');
     return;
   }
-  var password = this.passwordElement.value;
+  let password = this.passwordElement.value;
   if (!password || password.length < 8) {
     alert('Password should have 8 or more characters');
     return;
@@ -240,8 +240,8 @@ AccountProvisioningApp.prototype.createAccount = function() {
   console.log('Creating an account for username: ' + this.selectedUsername);
   HtmlUtils.hideElement(this.formElement);
   HtmlUtils.showElement(this.spinnerElement);
-  var firstname = this.firstnameElement.value;
-  var lastname = this.lastnameElement.value;
+  let firstname = this.firstnameElement.value;
+  let lastname = this.lastnameElement.value;
   this.create(this.selectedUsername, firstname, lastname, password,
       this.createCallback);
 }
@@ -252,7 +252,7 @@ AccountProvisioningApp.prototype.createAccount = function() {
  * @param {string} The response text.
  */
 AccountProvisioningApp.prototype.createCallback = function(responseText) {
-  var app = window['app'];
+  let app = window['app'];
   HtmlUtils.hideElement(app.spinnerElement);
   if (responseText.search('errorMessage:') > 0) {
     HtmlUtils.showElement(app.formElement);
@@ -261,7 +261,7 @@ AccountProvisioningApp.prototype.createCallback = function(responseText) {
   }
   HtmlUtils.showElement(app.accountCreatedElement);
   HtmlUtils.hideElement(app.accountCreationElement);
-  var account = app.selectedUsername + '@' + app.domain;
+  let account = app.selectedUsername + '@' + app.domain;
   app.createdAccountElement.innerHTML = account;
 }
 
@@ -332,7 +332,7 @@ AccountProvisioningApp.prototype.sendPostRequest = function(
  */
 AccountProvisioningApp.prototype.suggest = function(
     firstname, lastname, custom1, suggestCallback) {
-  var parameters;
+  let parameters;
   if (custom1 && custom1.length > 0) {
     parameters = '{' +
         '"firstname":"' + firstname + '",' +
@@ -359,7 +359,7 @@ AccountProvisioningApp.prototype.suggest = function(
  */
 AccountProvisioningApp.prototype.select = function(
     username, suggestions, selectCallback) {
-  var parameters = '{' +
+  let parameters = '{' +
     '"username":"' + username + '",' +
     '"suggestions":' + suggestions +
   '}';
@@ -378,7 +378,7 @@ AccountProvisioningApp.prototype.select = function(
  */
 AccountProvisioningApp.prototype.create = function(
     username, firstname, lastname, password, createCallback) {
-  var parameters = '{' +
+  let parameters = '{' +
     '"username":"' + username + '",' +
     '"firstname":"' + firstname + '",' +
     '"lastname":"' + lastname + '",'+
@@ -402,10 +402,10 @@ AccountProvisioningApp.prototype.unlockUsernames = function() {
  * Refreshes the suggested usernames.
  */
 AccountProvisioningApp.prototype.refreshUsernames = function() {
-  var app = window['app'];
-  var firstname = app.firstnameElement.value;
-  var lastname = app.lastnameElement.value;
-  var custom1 = app.custom1Element.value;
+  let app = window['app'];
+  let firstname = app.firstnameElement.value;
+  let lastname = app.lastnameElement.value;
+  let custom1 = app.custom1Element.value;
   if (firstname.length == 0 || lastname.length == 0) {
     app.hideSuggestions();
     return;
@@ -422,9 +422,9 @@ AccountProvisioningApp.prototype.refreshUsernames = function() {
  * @param {string} The response text.
  */
 AccountProvisioningApp.prototype.suggestCallback = function(responseText) {
-  var app = window['app'];
+  let app = window['app'];
   app.suggestResponseText = responseText;
-  var suggestionsArray = JSON.parse(responseText);
+  let suggestionsArray = JSON.parse(responseText);
   app.populateSuggesitons(suggestionsArray, 1);
   app.showSuggestions();
 }
@@ -435,7 +435,7 @@ AccountProvisioningApp.prototype.suggestCallback = function(responseText) {
  */
 AccountProvisioningApp.prototype.populateSuggesitons = function(suggestions) {
   this.maybeDrawOptions(suggestions);
-  for (var i = 1; i <= this.numberOfSuggestions; i++) {
+  for (let i = 1; i <= this.numberOfSuggestions; i++) {
     this.setSuggesitonRadioButton(i, suggestions[i - 1]);
   }
 }
@@ -448,7 +448,7 @@ AccountProvisioningApp.prototype.populateSuggesitons = function(suggestions) {
  */
 AccountProvisioningApp.prototype.setSuggesitonRadioButton = function(
     id, username) {
-  var account = username + '@' + this.domain;
+  let account = username + '@' + this.domain;
   document.getElementById('r' + id + '-label').innerHTML = account;
   document.getElementById('r' + id).value = username;
 }
@@ -480,11 +480,11 @@ AccountProvisioningApp.prototype.prepareSend = function(postData) {
  */
 AccountProvisioningApp.prototype.sendRequest = function() {
   this.waitingForRespone = true;
-  var postData = this.postQueue.shift();
-  var url = API_HOST + '/rest/' + postData.action;
-  var xhr = new XMLHttpRequest();
+  let postData = this.postQueue.shift();
+  let url = API_HOST + '/rest/' + postData.action;
+  let xhr = new XMLHttpRequest();
   xhr.onload = function() {
-  var app = window['app'];
+  let app = window['app'];
   postData.callback(this.responseText);
     if (app.postQueue.length > 0) {
       app.sendRequest();
@@ -506,10 +506,10 @@ AccountProvisioningApp.prototype.setupConfig = function() {
   hostUrl.innerHTML = API_HOST;
   var loadingMessage = document.getElementById('loadingMessage');
   HtmlUtils.showElement(loadingMessage);
-  var configCallback = function(responseText) {
-    var configMap = JSON.parse(responseText);
+  const configCallback = (responseText) => {
+    let configMap = JSON.parse(responseText);
     console.log(configMap);
-    var app = window['app'];
+    let app = window['app'];
     app.domain = configMap['domain'];
     app.numberOfSuggestions = configMap['numberOfSuggestions'];
     app.suggestedUsernamesTimeout = configMap['suggestedUsernamesTimeout'];
@@ -523,8 +523,8 @@ AccountProvisioningApp.prototype.setupConfig = function() {
         'Suggested usernames timeout: <strong>' +
         app.suggestedUsernamesTimeout + ' seconds</strong><br/><br/>' +
         'RESTful API Host: <strong>' + API_HOST + '</strong>';
-    var hideConfigSuccessfulDiv = function() {
-      var app = window['app'];
+    const hideConfigSuccessfulDiv = () => {
+      let app = window['app'];
       HtmlUtils.hideElement(app.loadingDiv);
     };
     setTimeout(hideConfigSuccessfulDiv, 2500);
@@ -537,7 +537,7 @@ AccountProvisioningApp.prototype.setupConfig = function() {
 /**
  * Contains static methods to manipulate HTML elements.
  */
-HtmlUtils = function() {
+const HtmlUtils = () => {
 }
 
 
@@ -562,7 +562,7 @@ HtmlUtils.showElement = function(element) {
 /**
  * Initializes the account provisioning app.
  */
-var initApp = function() {
+const initApp = () => {
   window['app'] = new AccountProvisioningApp();
 }
 
@@ -570,7 +570,7 @@ var initApp = function() {
 /**
  * Wrapper to call the createAccount method.
  */
-var createAccount = function() {
+const createAccount = () => {
   window['app'].createAccount();
 }
 
@@ -578,6 +578,6 @@ var createAccount = function() {
 /**
  * Wrapper to call the getNewSuggestions method.
  */
-var getSuggestions = function() {
+const getSuggestions = () => {
   window['app'].getNewSuggestions();
 }

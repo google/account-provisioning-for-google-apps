@@ -38,13 +38,13 @@ On the left side panel go to `Credentials > Create credentials` and click on the
 
 ![New Service Account][serviceAccount]
 
-In `Service account` select the option that has the name of the project, in `Key type` select **P12** option, then click on *Create*.
+In `Service account` select the option that Create new service account key, in `Key type` select **JSON** option, then click on *Create*.
 
 ![Create Service Account][createServiceAccount]
 
-A P12 file will download. e.g. `My project-84d807544f50.p12`. You will use this file later.
+A JSON file will download. e.g. `My project-84d807544f50.json`. You will use this file later.
 
-![Generate new P12 key][serviceAccountData]
+![Generate new JSON key][serviceAccountData]
 
 On the left side panel go to `Credentials` and click on the link *Manage service accounts*.
 
@@ -53,6 +53,8 @@ On the left side panel go to `Credentials` and click on the link *Manage service
 Copy the **Service account ID** of your project in somewhere as you will use it later. This is the **Email address** of your project.
 
 ![Copy Client Email][getClientEmail]
+
+Click on create new Service Account. Give it a name of your choice. Also check the option "Furnish a new private key". Select key type to be JSON. Click on create. Also note the client ID
 
 ### 4. Enable the Admin SDK API
 
@@ -64,29 +66,16 @@ Click on **Enable**
 
 ![enable api][enableapi]
 
-### 5. Enable the OAuth consumer key
+### 5. Authorize the Admin SDK API for your Service Account Client
+Go to http://admin.google.com/. Login with your credentials.
 
-Go to https://admin.google.com and navigate to `Security > Advanced settings > Manage OAuth domain key`
+Click on the hamburger sign on top left corner then: Navigate to Security > Advanced settings > Manage API client access 
 
-> If you don't see the *Advanced settings* click on *Show more*
-
-![oauth key][oauthkey]
-
-Check the **Enable this consumer key** box
-
-![oauth enabled][oauthset]
-
-### 6. Authorize the Admin SDK API for your Service Account Client
-
-Finally, navigate to `Security > Advanced settings > Manage OAuth domain key`
-
-![Manage OAuth domain key][manageclient]
-
-Enter the **Client ID** that was created in [step 2][step2] in the *Client Name* input box. In the *One or More API Scopes* input box enter `https://www.googleapis.com/auth/admin.directory.user`. Click on **Authorize**
+Enter the **Client ID** that was created in [step 3][step3] in the *Client Name* input box. In the *One or More API Scopes* input box enter `https://www.googleapis.com/auth/admin.directory.user`. Click on **Authorize**
 
 ![authorize service][authorizeservice]
 
-### 7. Fill out the API configuration fields
+### 6. Fill out the API configuration fields
 
 Awesome! You now have everything you need to configure the API.
 
@@ -110,9 +99,9 @@ apis.GoogleAPIs.authUser=you@yourdomain.com
 -------------
 
 ##### `apis.GoogleAPIs.keyPath`
-Move the P12 file you created in [step 3][step3] to the location where the `appsProvisioning-0.0.1.jar` file is located. Set the `keyPath` value to your P12 file location. Example:
+Move the JSON file you created in [step 3][step3](i.e. service account) to the location where the `appsProvisioning-0.0.1.jar` file is located. Set the `keyPath` value to your JSON file location. Example:
 ```properties
-apis.GoogleAPIs.keyPath=./My project-84d807544f50.p12
+apis.GoogleAPIs.keyPath=./My project-84d807544f50.json
 ```
 
 -------------
@@ -139,19 +128,19 @@ Great! The configuration is now complete. You can now start using the Account pr
 [step1]: #1-create-a-developers-project
 [step2]: #2-create-an-oauth-client-id
 [step3]: #3-create-a-service-account
-[authorizeservice]: http://googledrive.com/host/0B0hbybT0K1l7fjR6aEt3bl9XZFVFS1RGV3RMNW16LXlIWmhuRXhUWGsxWndIV2p6cEtlSkE/authorizeservice.png
-[serviceAccountData]: http://googledrive.com/host/0BzU5of9bIQV0QmFxTDU4Y3BCLXc/serviceAccountData.png
-[manageclient]: http://googledrive.com/host/0B0hbybT0K1l7fjR6aEt3bl9XZFVFS1RGV3RMNW16LXlIWmhuRXhUWGsxWndIV2p6cEtlSkE/manageclient.png
-[oauthset]: http://googledrive.com/host/0B0hbybT0K1l7fjR6aEt3bl9XZFVFS1RGV3RMNW16LXlIWmhuRXhUWGsxWndIV2p6cEtlSkE/oauthset.png
-[oauthkey]: http://googledrive.com/host/0B0hbybT0K1l7fjR6aEt3bl9XZFVFS1RGV3RMNW16LXlIWmhuRXhUWGsxWndIV2p6cEtlSkE/oauthkey.png
-[enableapi]: http://googledrive.com/host/0BzU5of9bIQV0QmFxTDU4Y3BCLXc/enableapi.png
-[adminsdkapi]: http://googledrive.com/host/0BzU5of9bIQV0QmFxTDU4Y3BCLXc/adminsdkapi.png
-[serviceAccount]: http://googledrive.com/host/0BzU5of9bIQV0QmFxTDU4Y3BCLXc/serviceAccount.png
-[clientID]: http://googledrive.com/host/0BzU5of9bIQV0QmFxTDU4Y3BCLXc/clientID.png
-[dash]: http://googledrive.com/host/0BzU5of9bIQV0QmFxTDU4Y3BCLXc/dash.png
-[cred]: http://googledrive.com/host/0BzU5of9bIQV0QmFxTDU4Y3BCLXc/cred.png
-[createProject]: http://googledrive.com/host/0B0hbybT0K1l7fjR6aEt3bl9XZFVFS1RGV3RMNW16LXlIWmhuRXhUWGsxWndIV2p6cEtlSkE/createProject.png
-[appTypeOther]: http://googledrive.com/host/0BzU5of9bIQV0QmFxTDU4Y3BCLXc/appTypeOther.png
-[createServiceAccount]: http://googledrive.com/host/0BzU5of9bIQV0QmFxTDU4Y3BCLXc/createServiceAccount.png
-[manageServiceAccounts]: http://googledrive.com/host/0BzU5of9bIQV0QmFxTDU4Y3BCLXc/manageServiceAccounts.png
-[getClientEmail]: http://googledrive.com/host/0BzU5of9bIQV0QmFxTDU4Y3BCLXc/getClientEmail.png
+[authorizeservice]: https://preview.ibb.co/cpmL5c/apiaccess.jpg
+[serviceAccountData]: https://hallowed-scene-147511.appspot.com/public/serviceAccountData.png
+[manageclient]: https://preview.ibb.co/cpmL5c/apiaccess.jpg
+[oauthset]: https://hallowed-scene-147511.appspot.com/public/oauthset.png
+[oauthkey]: https://hallowed-scene-147511.appspot.com/public/oauthkey.png
+[enableapi]: https://hallowed-scene-147511.appspot.com/public/enableapi.png
+[adminsdkapi]: https://hallowed-scene-147511.appspot.com/public/adminsdkapi.png
+[serviceAccount]: https://hallowed-scene-147511.appspot.com/public/serviceAccount.png
+[clientID]: https://hallowed-scene-147511.appspot.com/public/clientID.png
+[dash]: https://hallowed-scene-147511.appspot.com/public/dash.png
+[cred]: https://hallowed-scene-147511.appspot.com/public/cred.png
+[createProject]: https://hallowed-scene-147511.appspot.com/public/createProject.png
+[appTypeOther]: https://hallowed-scene-147511.appspot.com/public/appTypeOther.png
+[createServiceAccount]: https://image.ibb.co/kFs4WH/json.jpg
+[manageServiceAccounts]: https://hallowed-scene-147511.appspot.com/public/manageServiceAccounts.png
+[getClientEmail]: https://hallowed-scene-147511.appspot.com/public/getClientEmail.png
